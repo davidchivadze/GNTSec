@@ -1,0 +1,105 @@
+
+<div class="row">
+    <div class="col-12 col-sm-12">
+        <div class="card card-success card-tabs">
+          <div class="card-header p-0 pt-1">
+            <ul class="nav nav-tabs" id="custom-tabs-two-tab" role="tablist">
+              <li class="pt-2 px-3"><h3 class="card-title card-title-white">ხელფასის დამატება</h3></li>
+              <li class="nav-item">
+                <a class="nav-link active" id="custom-tabs-two-home-tab" data-toggle="pill" href="#custom-tabs-two-home" role="tab" aria-controls="custom-tabs-two-home" aria-selected="true">მთავარი</a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <div class="tab-content" id="custom-tabs-two-tabContent">
+              <div class="tab-pane fade show active" id="custom-tabs-two-home" role="tabpanel" aria-labelledby="custom-tabs-two-home-tab">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">სახელი</label>
+                            <input type="text" [(ngModel)]="SalaryGenerator.name" id="name" #name="ngModel" class="form-control" >
+                            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                              <div *ngIf="name.errors.required">
+                                  სახელის მითითება სავალდებულოა
+                              </div>
+                            </div>
+                          </div>
+                       </div>
+                    <div class="col-md-6">
+                     <div class="form-group">
+                         <label for="exampleInputEmail1">ხელფასის დათვლის წესი</label>
+                         <select  class="form-control" [(ngModel)]="SalaryGenerator.salaryTypeID" *ngIf="SalaryTypeList">
+                           <option *ngFor="let salaryType of SalaryTypeList" value="{{salaryType.iD}}">{{salaryType.description}}</option>
+                         </select>
+                       </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="exampleInputEmail1">ხელფასი</label>
+                          <input type="number" [(ngModel)]="SalaryGenerator.amount" id="salary" #salary="ngModel" class="form-control" >
+                          <div *ngIf="salary.invalid && (salary.dirty || salary.touched)" class="alert alert-danger">
+                            <div *ngIf="salary.errors.required">
+                                ხელფასის მითითება სავალდებულოა
+                            </div>
+                          </div>
+                        </div>
+                     </div>
+                    <hr>
+                     <div class="col-md-12">
+                       <h3>ჯარიმები</h3>
+                     </div>
+                    <div class="col-md-6">
+                     <div class="form-group">
+                         <label for="exampleInputEmail1">ჯარიმის დათვლის წესი</label>
+                         <select  class="form-control" [(ngModel)]="SalaryGenerator.fineTypeID" *ngIf="FineTypeList">
+                           <option *ngFor="let fine of FineTypeList" value="{{fine.iD}}">{{fine.description}}</option>
+                         </select>
+                       </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="exampleInputEmail1">ჯარიმა</label>
+                          <input type="number" [(ngModel)]="SalaryGenerator.fineAmount" id="fine" #fine="ngModel" class="form-control" >
+                          <div *ngIf="fine.invalid && (fine.dirty || fine.touched)" class="alert alert-danger">
+                            <div *ngIf="fine.errors.required">
+                                ჯარიმის მითითება სავალდებულოა
+                            </div>
+                          </div>
+                        </div>
+                     </div>
+                     <div class="col-md-12">
+                      <h3>პატიებები</h3>
+                    </div>
+                   <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">პატიებები დათვლის წესი</label>
+                        <select  class="form-control" [(ngModel)]="SalaryGenerator.forgivenessTypeID" *ngIf="ForgivenessTypeList">
+                          <option *ngFor="let forgiveness of ForgivenessTypeList" value="{{forgiveness.iD}}">{{forgiveness.description}}</option>
+                        </select>
+                      </div>
+                   </div>
+                   <div class="col-md-6">
+                     <div class="form-group">
+                         <label for="exampleInputEmail1">პატიება</label>
+                         <input type="number" [(ngModel)]="SalaryGenerator.forgivenessAmount" id="forgiveness" #forgiveness="ngModel" class="form-control" >
+                         <div *ngIf="forgiveness.invalid && (forgiveness.dirty || forgiveness.touched)" class="alert alert-danger">
+                          <div *ngIf="forgiveness.errors.required">
+                              პატიების მითითება სავალდებულოა
+                          </div>
+                        </div>
+                       </div>
+                    </div>
+                </div>
+               <div class="row">
+                 <div class="col-md-12">
+                   <button class="btn btn-success col-md-12" (click)="SubmitEdit()">რედაქტირება</button>
+                 </div>
+               </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+
+</div>

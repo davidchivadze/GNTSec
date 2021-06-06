@@ -1,0 +1,49 @@
+
+<div class="row">
+    <div class="col-12 col-sm-12">
+        <div class="card card-success card-tabs">
+          <div class="card-header p-0 pt-1">
+            <ul class="nav nav-tabs" id="custom-tabs-two-tab" role="tablist">
+              <li class="pt-2 px-3"><h3 class="card-title card-title-white">უქმე დღის დამატება</h3></li>
+              <li class="nav-item">
+                <a class="nav-link active" id="custom-tabs-two-home-tab" data-toggle="pill" href="#custom-tabs-two-home" role="tab" aria-controls="custom-tabs-two-home" aria-selected="true">მთავარი</a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <div class="tab-content" id="custom-tabs-two-tabContent">
+              <div class="tab-pane fade show active" id="custom-tabs-two-home" role="tabpanel" aria-labelledby="custom-tabs-two-home-tab">
+
+                <div class="row">
+                   <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">დასახელება</label>
+                        <input type="text" [(ngModel)]="AddGovermentHoliday.description" id="departmentName" #departmentName="ngModel" class="form-control" required>
+                        <div *ngIf="departmentName.invalid && (departmentName.dirty || departmentName.touched)" class="alert alert-danger">
+                          <div *ngIf="departmentName.errors.required">
+                              დასახელების მითითება სავალდებულოა
+                          </div>
+                        </div>
+                      </div>
+                   </div>
+
+                   <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">თარიღი</label>
+                        <input type="date" [(ngModel)]="AddGovermentHoliday.holidayDate" class="form-control" >
+                      </div>
+                   </div>
+                </div>
+               <div class="row">
+                 <div class="col-md-12">
+                   <button class="btn btn-success col-md-12" (click)="SubmitAddHoliday()">დამატება</button>
+                 </div>
+               </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+
+</div>

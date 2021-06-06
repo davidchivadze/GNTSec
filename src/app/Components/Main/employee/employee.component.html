@@ -1,0 +1,79 @@
+
+<div class="row">
+
+      <div class="col-md-3 col-sm-6 col-12">
+          <a routerLink="/Employee">
+        <div class="info-box">
+          <span class="info-box-icon bg-info"><i class="fas fa-database"></i></span>
+    
+          <div class="info-box-content">
+            <span class="info-box-text">მომხმარებელების სია</span>
+            <!-- <span class="info-box-number">1,410</span> -->
+          </div>
+          <!-- /.info-box-content -->
+        </div>
+    </a>
+        <!-- /.info-box -->
+      </div>
+      <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box" (click)="SyncDeviceData()">
+            <span class="info-box-icon bg-success"><i class="fas fa-sync" [ngClass]="IsRunning?'fa-spin':''"></i></span>
+      
+            <div class="info-box-content">
+              <span class="info-box-text" style="color:#007bff; cursor: pointer;">სინქრონიზაცია</span>
+              <!-- <span class="info-box-number">1,410</span> -->
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box" (click)="SyncDeviceUserData()">
+            <span class="info-box-icon bg-success"><i class="fas fa-sync" [ngClass]="IsRunningUser?'fa-spin':''"></i></span>
+      
+            <div class="info-box-content">
+              <span class="info-box-text" style="color:#007bff; cursor: pointer;">თანამშრომლების სინქრონიზაცია</span>
+              <!-- <span class="info-box-number">1,410</span> -->
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box" (click)="SyncDeviceFullData()">
+            <span class="info-box-icon bg-success"><i class="fas fa-sync" [ngClass]="IsRunningFull?'fa-spin':''"></i></span>
+      
+            <div class="info-box-content">
+              <span class="info-box-text" style="color:#007bff; cursor: pointer;">სრული სინქრონიზაცია</span>
+              <!-- <span class="info-box-number">1,410</span> -->
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-12">
+        <a routerLink="/Employee/AddEmployee">
+        <div class="info-box">
+            <span class="info-box-icon bg-success"><i class="fas fa-user-plus"></i></span>
+      
+            <div class="info-box-content">
+              <span class="info-box-text">თანამშრომლის დამატება</span>
+              <!-- <span class="info-box-number">1,410</span> -->
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+        </a>
+      </div>
+      <div class="col-md-3 col-sm-6 col-12">
+        <a routerLink="/Employee/EmployeeListFromDevice">
+        <div class="info-box">
+            <span class="info-box-icon bg-success"><i class="fas fa-id-card-alt"></i></span>
+      
+            <div class="info-box-content">
+              <span class="info-box-text">მომხმარებლები მოწყობილობიდან</span>
+              <!-- <span class="info-box-number">1,410</span> -->
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+        </a>
+      </div>
+</div>
+
+<router-outlet></router-outlet>

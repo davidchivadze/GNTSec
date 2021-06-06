@@ -1,0 +1,9 @@
+﻿<div class="loading-host">
+  <div [className]="loadingHostClassName">
+    <ng-content></ng-content>
+  </div>
+  <div [className]="loadingHostAnimClassName">
+    <img src="./assets/Images/logo1.png" class="position-absolute"/>
+    <mat-spinner diameter="80" color="green"></mat-spinner>
+  </div>
+</div>

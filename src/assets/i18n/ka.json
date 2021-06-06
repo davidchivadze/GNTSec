@@ -1,0 +1,24 @@
+{
+    "HOME":{
+        "title":"დავითი ჩივაძე",
+        "AboutUS":"ჩვენ შესახებ",
+        "Login":"შესვლა",
+        "AllCategories":"კატეგორია",
+        "Contact":"კონტაქტი",
+        "ViewCart":"კალათა",
+        "CheckOut":"გადახდა",
+        "Search":"ძებნა",
+        "Collection":"კოლექცია",
+        "Blog":"ბლოგი",
+        "Shoes":"ფეხსაცმელი",
+        "Trousers":"შარვალი",
+        "Sport":"სპორტული ტანსაცმელი",
+        "Dress":"კაბები",
+        "Accessories":"აქსესუარები",
+        "main":"მთავარი"
+        
+    },
+    "Slider":{
+        "ShopNow":"იყიდე ახლავე"
+    }
+}

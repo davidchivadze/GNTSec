@@ -1,0 +1,35 @@
+﻿<app-loading [hostName]="hostName">
+<div class="d-flex justify-content-center flex-row">
+  <div class="col-md-12">
+    <div class="kt-file-attach-container">
+      <div class="d-flex flex-column align-items-center">
+        <div class="kt-file-attach-description justify-content-center">
+          ფაილის ატვირთვა
+        </div>
+        <div class="kt-file-attach-emitter align-content-center">
+          <div class="d-flex flex-row align-items-center" style="gap: 0.8rem">
+            <mat-form-field appearance="fill" floatLabel="never">
+              <mat-label [style.color]="'#808080'">იმპორტის ტიპი</mat-label>
+              <mat-select [(value)]="selectedImportType">
+                <mat-option *ngFor="let importType of importTypes" [value]="importType.id">
+                  {{importType.value}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <div class="kt-file-attach-divider"></div>
+            <div>
+              <button mat-raised-button color="primary" class="bt-choose-file" (click)="openFileDialog($event)">
+                ფაილის არჩევა
+                <input id="file-import-input" type="file" style="display:none" (change)="handle($event)" #fileInputElement>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</app-loading>
+
+
+

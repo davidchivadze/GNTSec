@@ -1,0 +1,145 @@
+
+<div class="row">
+    <div class="col-12 col-sm-12">
+        <div class="card card-success card-tabs">
+          <div class="card-header p-0 pt-1">
+            <ul class="nav nav-tabs" id="custom-tabs-two-tab" role="tablist">
+              <li class="pt-2 px-3"><h3 class="card-title card-title-white">გრაფიკის დამატება</h3></li>
+              <li class="nav-item">
+                <a class="nav-link active" id="custom-tabs-two-home-tab" data-toggle="pill" href="#custom-tabs-two-home" role="tab" aria-controls="custom-tabs-two-home" aria-selected="true">მთავარი</a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <div class="tab-content" id="custom-tabs-two-tabContent">
+              <div class="tab-pane fade show active" id="custom-tabs-two-home" role="tabpanel" aria-labelledby="custom-tabs-two-home-tab">
+
+                <div class="row">
+                    <input type="hidden" ng-model="AddSchedule.scheduleTypeID" ng-value="1" ng-init="AddSchedule.scheduleTypeID=1">
+                    <div class="col-md-6">
+                        <label for="exampleInputEmail1">დასახელება</label>
+                      <input type="text" [(ngModel)]="AddSchedule.name" id="name" #name="ngModel" class="form-control" >
+                      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                        <div *ngIf="name.errors.required">
+                            დასახელების მითითება სავალდებულოა
+                        </div>
+                      </div>
+                      </div>
+                    <div class="col-md-6">
+                      <label for="exampleInputEmail1">დაწყების დრო</label>
+                    <input type="time" [(ngModel)]="AddSchedule.startTime" id="startTime" #startTime="ngModel" class="form-control" >
+                    <div *ngIf="startTime.invalid && (startTime.dirty || startTime.touched)" class="alert alert-danger">
+                      <div *ngIf="startTime.errors.required">
+                          დაწყების დროის მითითება სავალდებულოა
+                      </div>
+                    </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                      <label for="exampleInputEmail1">დასრულების დრო</label>
+                    <input type="time"  [(ngModel)]="AddSchedule.endTime" id="endTime" #endTime="ngModel" class="form-control" >
+                    <div *ngIf="endTime.invalid && (endTime.dirty || endTime.touched)" class="alert alert-danger">
+                      <div *ngIf="endTime.errors.required">
+                          დასრულების დროის მითითება სავალდებულოა
+                      </div>
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="exampleInputEmail1">მინიმალური მოსვლის დრო</label>
+                    <input type="time"  [(ngModel)]="AddSchedule.minCheckInTime" id="minCheckInTime" #minCheckInTime="ngModel" class="form-control" >
+                    <div *ngIf="minCheckInTime.invalid && (minCheckInTime.dirty || minCheckInTime.touched)" class="alert alert-danger">
+                      <div *ngIf="minCheckInTime.errors.required">
+                        მინიმალური მოსვლის დროის მითითება სავალდებულოა
+                      </div>
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="exampleInputEmail1">მაქსიმალური გასვლის დრო</label>
+                    <input type="time"  [(ngModel)]="AddSchedule.maxCheckOutTime" id="maxCheckOutTime" #maxCheckOutTime="ngModel" class="form-control" >
+                    <div *ngIf="maxCheckOutTime.invalid && (maxCheckOutTime.dirty || maxCheckOutTime.touched)" class="alert alert-danger">
+                      <div *ngIf="maxCheckOutTime.errors.required">
+                        მაქსიმალური გასვლის დროის მითითება სავალდებულოა
+                      </div>
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="exampleInputEmail1">შესვენებაზე გასვლის დრო</label>
+                    <input type="time"  [(ngModel)]="AddSchedule.breakStartTime" id="breakStartTime" #breakStartTime="ngModel" class="form-control" >
+                    <div *ngIf="breakStartTime.invalid && (breakStartTime.dirty || breakStartTime.touched)" class="alert alert-danger">
+                      <div *ngIf="breakStartTime.errors.required">
+                        შესვენებაზე გასვლის დროის მითითება სავალდებულოა
+                      </div>
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="exampleInputEmail1">შესვენებიდან მოსვლის დრო</label>
+                    <input type="time"  [(ngModel)]="AddSchedule.breakEndTime" id="breakEndTime" #breakEndTime="ngModel" class="form-control" >
+                    <div *ngIf="breakEndTime.invalid && (breakEndTime.dirty || breakEndTime.touched)" class="alert alert-danger">
+                      <div *ngIf="breakEndTime.errors.required">
+                        შესვენებიდან მოსვლის დროის მითითება სავალდებულოა
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label for="exampleInputEmail1">მხოლოდ სამუშოა დღეებში</label>
+                    <select class="form-control" [(ngModel)]="AddSchedule.onWorkingDaysOnly" >
+                    <option value="true">კი</option>
+                    <option value="false">არა</option>  
+                    </select>
+                    </div>
+                    
+                    <div class="col-md-6">
+                    
+                        <label for="exampleInputEmail1">მხოლოდ სამუშოა საათებში</label>
+                      <select class="form-control" [(ngModel)]="AddSchedule.onWorkingHouresOnly" >
+                      <option value="true">კი</option>
+                      <option value="false">არა</option>  
+                      </select>
+                    
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label for="exampleInputEmail1">დღეში სამუშაო საათები</label>
+                      <input type="number" [(ngModel)]="AddSchedule.daylyHouresAmount" id="dayHours" #dayHours="ngModel" class="form-control" >
+                      <div *ngIf="dayHours.invalid && (dayHours.dirty || dayHours.touched)" class="alert alert-danger">
+                        <div *ngIf="dayHours.errors.required">
+                            დღიური სამუშაო საათების მითითება სავალდებულოა
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <label for="exampleInputEmail1">კვირაში სამუშაო საათები</label>
+                        <input type="number" [(ngModel)]="AddSchedule.weekHouresAmount" id="weekHours" #weekHours="ngModel" class="form-control" >
+                        <div *ngIf="weekHours.invalid && (weekHours.dirty || weekHours.touched)" class="alert alert-danger">
+                          <div *ngIf="weekHours.errors.required">
+                              კვირის სამუშაო საათების მითითება სავალდებულოა
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="exampleInputEmail1">დღეში შესვენების დრო საათებში</label>
+                      <input type="text" [(ngModel)]="AddSchedule.breakAmount" id="breakAmount" #breakAmount="ngModel" class="form-control"  >
+                      <div *ngIf="breakAmount.invalid && (breakAmount.dirty || breakAmount.touched)" class="alert alert-danger">
+                        <div *ngIf="breakAmount.errors.required">
+                            დღეში შესვენების დროის მითითება სავალდებულოა
+                        </div>
+                      </div>
+                  </div>
+                  </div>
+               <div class="row">
+                 <div class="col-md-12">
+                   <button class="btn btn-success col-md-12" (click)="SubmitAdd()">დამატება</button>
+                 </div>
+               </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+
+</div>

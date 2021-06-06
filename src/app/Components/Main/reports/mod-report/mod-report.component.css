@@ -1,0 +1,40 @@
+.card-title{
+    font-family: MainWebFont;
+}
+.nav-link{
+    font-family: MainWebFont;
+}
+.form-group{
+    font-family: MainWebFont;
+}
+h3{
+    font-family: MainWebFont;
+    color:gray;
+}
+.card-title-white{
+    color:white;
+}
+label{
+    font-family: MainWebFont;
+}
+input{
+    font-family: MainWebFont;
+}
+option{
+    font-family: MainWebFont !important;
+}
+.form-control{
+    font-family: MainWebFont;
+}
+.addHolidayTypeButton{
+    margin-top: 50px;
+    font-family: MainWebFont;
+    font-weight: bold;
+    word-spacing: 2px;
+}
+.custom-file-label::after{
+    content: 'არჩევა' !important;
+}
+.btn{
+    font-family: MainWebFont;
+}
