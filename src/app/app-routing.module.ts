@@ -51,6 +51,7 @@ import { AuthLayoutComponent } from './Components/Shared/auth-layout/auth-layout
 import { LoginLayoutComponent } from './Components/Shared/login-layout/login-layout.component';
 import { AuthGuard } from './Guard/Guard/auth.guard';
 import {RouterModule, Routes} from "@angular/router";
+import { SendReportsComponent } from './Components/Main/reports/send-reports/send-reports.component';
 
 const routes: Routes = [
   {path:"*",component:AuthLayoutComponent},
@@ -127,7 +128,8 @@ const routes: Routes = [
     {path:"",component:ModReportComponent},
     {path:"ModReport",component:ModReportComponent},
     {path:"FullReport",component:FullReportComponent},
-    {path:"FullReportWeekly",component:FullReportWeekResultsComponent}
+    {path:"FullReportWeekly",component:FullReportWeekResultsComponent},
+    {path:"SendMail",component:SendReportsComponent}
   ]},
       {
         path: 'admin',

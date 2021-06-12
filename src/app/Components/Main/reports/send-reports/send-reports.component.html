@@ -1,0 +1,63 @@
+
+<div class="row">
+    <div class="col-12 col-sm-12">
+        <div class="card card-success card-tabs">
+          <div class="card-header p-0 pt-1">
+            <ul class="nav nav-tabs" id="custom-tabs-two-tab" role="tablist">
+              <li class="pt-2 px-3"><h3 class="card-title card-title-white">რეპორტის გაგზავნა მენეჯერებთან</h3></li>
+              <li class="nav-item">
+                <a class="nav-link active" id="custom-tabs-two-home-tab" data-toggle="pill" href="#custom-tabs-two-home" role="tab" aria-controls="custom-tabs-two-home" aria-selected="true">პარამეტრები</a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <div class="tab-content" id="custom-tabs-two-tabContent">
+              <div class="tab-pane fade show active" id="custom-tabs-two-home" role="tabpanel" aria-labelledby="custom-tabs-two-home-tab">
+
+                <div class="row">
+                   <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">დასახელება</label>
+                        <select class="form-control" [(ngModel)]="month">
+                            <option value="1">იანვარი</option>
+                            <option value="2">თებერვალი</option>
+                            <option value="3">მარტი</option>
+                            <option value="4">აპრილი</option>
+                            <option value="5">მაისი</option>
+                            <option value="6">ივნისი</option>
+                            <option value="7">ივლისი</option>
+                            <option value="8">აგვისტო</option>
+                            <option value="9">სექტემბერი</option>
+                            <option value="10">ოქტომბერი</option>
+                            <option value="11">ნოემბერი</option>
+                            <option value="12">დეკემბერი</option>
+                        </select>
+                      </div>
+                   </div>
+                   <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">წელი</label>
+                        <select class="form-control" [(ngModel)]="year">
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                        </select>
+                      </div>
+                   </div>
+                </div>
+               <div class="row">
+                 <div class="col-md-12">
+                   <button class="btn btn-success col-md-12" (click)="Generate()">გაგზავნა</button>
+                 </div>
+               </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+
+</div>

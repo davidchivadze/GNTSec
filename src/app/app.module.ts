@@ -99,6 +99,8 @@ import {DxButtonModule, DxDataGridModule, DxDropDownBoxModule, DxListModule, DxT
 import {LoadingComponent} from "./Components/layout/loading/loading.component";
 import {LoadingService} from "./Components/layout/loading/loading.service";
 import {SharedModule} from "./module/shared.module";
+import { TokenInterceptorService } from './Services/Auth/token-interceptor.service';
+import { SendReportsComponent } from './Components/Main/reports/send-reports/send-reports.component';
 
 export function CrateTranslateLoader(http:HttpClient){
   return new TranslateHttpLoader(http);
@@ -213,7 +215,8 @@ const dxModule = [
     EditSalaryGeneratorsComponent,
     AddDeviceLogComponent,
     FullReportWeekResultsComponent,
-    EditDeviceLogComponent
+    EditDeviceLogComponent,
+    SendReportsComponent
 
   ],
   imports: [
@@ -256,7 +259,7 @@ const dxModule = [
     AuthGuard,
     CookieService,
     FileImportService,
-    // {provide:HTTP_INTERCEPTORS,useClass:TokenInterceptorService,multi:true},
+     {provide:HTTP_INTERCEPTORS,useClass:TokenInterceptorService,multi:true},
     {provide:APIService.API_BASE_URL, useValue:environment.API_URL},
   ],
   bootstrap: [AppComponent]
