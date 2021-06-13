@@ -43,7 +43,6 @@ import { MainDeviceLocationInBranchComponent } from './Components/Parameters/Dev
 import { EditDeviceLocationInBranchComponent } from './Components/Parameters/DeviceLocationInBranch/edit-device-location-in-branch/edit-device-location-in-branch.component';
 import { DeviceLocationInBranchListComponent } from './Components/Parameters/DeviceLocationInBranch/device-location-in-branch-list/device-location-in-branch-list.component';
 import { EditEmployeeComponent } from './Components/Main/employee/edit-employee/edit-employee.component';
-import { environment } from 'src/environments/environment';
 import { EditDeviceComponent } from './Components/Main/devices/edit-device/edit-device.component';
 import { KeygenInsertComponent } from './Components/Auth/keygen-insert/keygen-insert.component';
 import { EmployeeListFromDeviceComponent } from './Components/Main/employee/employee-list-from-device/employee-list-from-device.component';
@@ -101,6 +100,7 @@ import {LoadingService} from "./Components/layout/loading/loading.service";
 import {SharedModule} from "./module/shared.module";
 import { TokenInterceptorService } from './Services/Auth/token-interceptor.service';
 import { SendReportsComponent } from './Components/Main/reports/send-reports/send-reports.component';
+import {environment} from "../environments/environment";
 
 export function CrateTranslateLoader(http:HttpClient){
   return new TranslateHttpLoader(http);
