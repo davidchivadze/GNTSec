@@ -1,5 +1,5 @@
 ﻿import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {FileImportRequestModel} from "../../../../model/import/file-import.model";
 import {Observable} from "rxjs";
 import {map} from "rxjs/operators";
@@ -12,9 +12,17 @@ export class FileImportService {
   }
 
   public importFile(request: FileImportRequestModel): Observable<boolean> {
-    const formData = new FormData();
+    let formData = new FormData();
     formData.append('file', request.file);
-    return this.http.post<boolean>(`hangfire/importfile`, formData)
+    formData.append('importType', request.importType.toString());
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'multipart/form-data'
+      })
+    };
+
+    return this.http.post<boolean>(`http://localhost:5000/ImportJob/FileImport`, formData)
       .pipe(map(response => {
         return response;
       }));

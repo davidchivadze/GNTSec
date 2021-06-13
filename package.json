@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config ./proxy.config.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -31,21 +31,21 @@
     "admin-lte": "^3.0.5",
     "angular-calendar": "^0.28.22",
     "bootstrap": "^4.4.1",
+    "cors": "^2.8.5",
     "date-fns": "^2.17.0",
     "devextreme": "19.2.6",
     "devextreme-angular": "19.2.6",
     "exceljs": "^4.2.1",
-    "lodash": "^4.17.11",
     "file-saver": "^2.0.5",
     "flag-icon-css": "^3.5.0",
+    "lodash": "^4.17.11",
     "material-design-icons": "^3.0.1",
     "material-icons": "^0.3.1",
     "ng-inline-svg": "^9.2.2",
     "ng-mat-select-infinite-scroll": "^2.0.0",
     "ngx-cookie-service": "^11.0.2",
     "rxjs": "~6.6.0",
-    "tslib": "^2.0.0",
-    "zone.js": "~0.10.2"
+    "tslib": "^2.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1001.4",

@@ -24,13 +24,7 @@ export class ImportComponent {
 
   openFileDialog(_: MouseEvent) {
     if (!this.selectedImportType) {
-      custom({
-        message: 'აირჩიეთ იმპორტის ტიპი',
-        showTitle: false,
-        buttons: [
-          {text: 'კარგი', onClick: _ => true},
-        ]
-      }).show()
+      this.dialogAlert('აირჩიეთ იმპორტის ტიპი', false,true)
       return;
     }
     this.fileInputElement.nativeElement.click()
@@ -50,14 +44,34 @@ export class ImportComponent {
           map((result) => {
             if(result) {
               this.loadingService.hideLoader(this.hostName);
+              this.dialogAlert('მიმდინარეობს მონაცემების სინქრონიზაცია', false);
             }
           }),
           catchError(error => {
-            //this.loadingService.hideLoader(this.hostName);
+              this.loadingService.hideLoader(this.hostName);
+            this.dialogAlert('მიმდინარეობს მონაცემების სინქრონიზაცია', false);
             throw error.message;
           }),
         ).subscribe();
+    }
+  }
 
+  dialogAlert(message: string, showTitle: boolean, includeButtons: boolean = false){
+    if(includeButtons){
+      custom({
+        message: message,
+        showTitle: showTitle,
+        buttons: [
+          {text: 'კარგი', onClick: _ => true},
+        ]
+      }).show()
+      return;
+    }else{
+      custom({
+        message: message,
+        showTitle: showTitle,
+      }).show()
+      return;
     }
   }
 }

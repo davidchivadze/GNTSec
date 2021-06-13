@@ -1,5 +1,19 @@
 ﻿$app-color: #28a745;
-.kt-file-attach-container {
+  ::ng-deep {
+    .dx-dialog-content {
+      color: $app-color;
+      font-weight: 500;
+    }
+
+    .dx-button-content{
+      background-color: $app-color !important;
+      .dx-button-text{
+        color: #f3f1f8 !important;
+      }
+    }
+  }
+
+  .kt-file-attach-container {
     border: rgba(124, 116, 230, 0.47) dashed 1.5px;
     margin: 2%;
     border-radius: 5px;
@@ -34,7 +48,7 @@
       padding: 1%;
     }
 
-    .bt-choose-file{
+    .bt-choose-file {
       background-color: $app-color;
       outline: none !important;
     }
