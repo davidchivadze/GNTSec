@@ -18,7 +18,7 @@ export class ImportComponent {
   public hostName: string = 'import';
 
   constructor(private fileImportService: FileImportService,
-              public loadingService: LoadingService) {
+              public loadingService : LoadingService) {
     this.loadingService.hideLoader(this.hostName);
   }
 

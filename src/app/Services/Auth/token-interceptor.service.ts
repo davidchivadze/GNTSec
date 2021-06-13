@@ -24,6 +24,7 @@ export class TokenInterceptorService implements HttpInterceptor {
       }
     })
     return next.handle(tokenizedReq).pipe(catchError((err: any) => {
+      console.log(err.status);
       if(err.status===401){
   
         return this.router.navigate(['/Auth/Login']);

@@ -43,6 +43,7 @@ import { MainDeviceLocationInBranchComponent } from './Components/Parameters/Dev
 import { EditDeviceLocationInBranchComponent } from './Components/Parameters/DeviceLocationInBranch/edit-device-location-in-branch/edit-device-location-in-branch.component';
 import { DeviceLocationInBranchListComponent } from './Components/Parameters/DeviceLocationInBranch/device-location-in-branch-list/device-location-in-branch-list.component';
 import { EditEmployeeComponent } from './Components/Main/employee/edit-employee/edit-employee.component';
+import { environment } from 'src/environments/environment';
 import { EditDeviceComponent } from './Components/Main/devices/edit-device/edit-device.component';
 import { KeygenInsertComponent } from './Components/Auth/keygen-insert/keygen-insert.component';
 import { EmployeeListFromDeviceComponent } from './Components/Main/employee/employee-list-from-device/employee-list-from-device.component';
@@ -70,7 +71,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatSelectModule} from "@angular/material/select";
 import {MatInputModule} from "@angular/material/input";
 import { RouterModule } from '@angular/router';
-import {CommonModule} from '@angular/common';
+import {CommonModule, DatePipe} from '@angular/common';
 // NgBootstrap
 import {NgbDropdownModule, NgbTooltipModule} from '@ng-bootstrap/ng-bootstrap';
 // Perfect Scrollbar
@@ -96,8 +97,10 @@ import {FileImportService} from "./http/administration/import/service/file-impor
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {DxButtonModule, DxDataGridModule, DxDropDownBoxModule, DxListModule, DxTagBoxModule} from "devextreme-angular";
 import {LoadingComponent} from "./Components/layout/loading/loading.component";
+import {LoadingService} from "./Components/layout/loading/loading.service";
 import {SharedModule} from "./module/shared.module";
-import {environment} from "../environments/environment";
+import { TokenInterceptorService } from './Services/Auth/token-interceptor.service';
+import { SendReportsComponent } from './Components/Main/reports/send-reports/send-reports.component';
 
 export function CrateTranslateLoader(http:HttpClient){
   return new TranslateHttpLoader(http);
@@ -212,7 +215,8 @@ const dxModule = [
     EditSalaryGeneratorsComponent,
     AddDeviceLogComponent,
     FullReportWeekResultsComponent,
-    EditDeviceLogComponent
+    EditDeviceLogComponent,
+    SendReportsComponent
 
   ],
   imports: [
@@ -255,7 +259,7 @@ const dxModule = [
     AuthGuard,
     CookieService,
     FileImportService,
-    // {provide:HTTP_INTERCEPTORS,useClass:TokenInterceptorService,multi:true},
+     {provide:HTTP_INTERCEPTORS,useClass:TokenInterceptorService,multi:true},
     {provide:APIService.API_BASE_URL, useValue:environment.API_URL},
   ],
   bootstrap: [AppComponent]
